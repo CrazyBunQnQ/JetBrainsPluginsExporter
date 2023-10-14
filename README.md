@@ -17,11 +17,13 @@
 - [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+This plugin currently has these main features.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+- Dump which plugins are installed to a JSON file
+- Dump which plugins are installed as plugin repository
+- Download all plugins from a JSON file
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+[GitHub](https://github.com/CrazyBunQnQ/PluginsExporter) | [Issues](https://github.com/CrazyBunQnQ/PluginsExporter/issues)
 <!-- Plugin description end -->
 
 ## Installation
@@ -36,6 +38,49 @@ To keep everything working, do not remove `<!-- ... -->` sections.
   Download the [latest release](https://github.com/CrazyBunQnQ/PluginsExporter/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## Usage
+### Export to JSON file
+
+* Go to `File > Export Plugins... > select JSON file to write > Export`
+
+### Import from JSON file
+
+* Go to `File > Import Plugins... > select JSON file to read > Install Plugins`
+* Restart!
+
+### Options
+
+**Save Disabled Plugin Information**
+
+By default, this plugin ignore following plugins to export:
+
+* IDEA CORE (com.intellij)
+* This plugin
+* Bundled plugins
+* Disbaled plugins
+
+But, if you check this option, the plugin exports disbaled plugins include disabled bundle plugins.
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
+
+## TODO
+
+1. Ignore unpublished plugins to export
+1. Import/Export plugins settings
+1. Auto export
+1. Check capability of installing the plugins (e.g. AndroidStduio specific plugins should not be install to PhpStorm)
+1. i18n
+1. Dump plugin information in different format
+1. Install specific version of plugins
+1. Tests
+
+## License
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
