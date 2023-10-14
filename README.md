@@ -80,8 +80,6 @@ But, if you check this option, the plugin exports disbaled plugins include disab
 1. Install specific version of plugins
 1. Tests
 
-## License
-
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
