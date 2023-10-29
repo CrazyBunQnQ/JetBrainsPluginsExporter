@@ -28,6 +28,14 @@ dependencies {
     implementation(libs.annotations)
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
+    implementation("org.projectlombok:lombok:1.18.10")
+    implementation("com.aliyun.oss:aliyun-sdk-oss:3.9.1")
+    implementation("commons-io:commons-io:2.7")
+    implementation("org.apache.commons:commons-text:1.9")
+    implementation("com.google.guava:guava:23.0")
+    implementation("commons-collections:commons-collections:3.2.2")
+    implementation("redis.clients:jedis:3.4.1")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.321")
 }
 
 java {

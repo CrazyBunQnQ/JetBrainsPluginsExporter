@@ -1,6 +1,14 @@
 # CrazySync Changelog
 
 ## [Unreleased]
+## [0.0.7]
+
+## [0.0.7]
+
+### Added
+
+- add chineseized arthas, more information on arthas [here](https://plugins.jetbrains.com/plugin/13581-arthas-idea)
+
 ## [0.0.6]
 
 ### Changed

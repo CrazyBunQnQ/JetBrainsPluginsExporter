@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.github.wangji92.arthas.plugin.ui.ArthasShellScriptCommandDialog">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="5" left="5" bottom="5" right="5"/>
+    <constraints>
+      <xy x="48" y="276" width="982" height="379"/>
+    </constraints>
+    <properties/>
+    <border type="etched"/>
+    <children>
+      <component id="445ea" class="javax.swing.JLabel" binding="dyTipLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="6e316" class="javax.swing.JLabel" binding="constantLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="500" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="eedb" class="javax.swing.JRadioButton" binding="selectCommandCloseDialogRadioButton">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="438" height="22"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="选择一个命令后关闭此窗口"/>
+        </properties>
+      </component>
+      <component id="bde56" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="动态命令（仅显示当前鼠标位置可用的命令）"/>
+        </properties>
+      </component>
+      <grid id="9e539" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="22c1c" class="com.intellij.ui.components.AnActionLink" binding="dyScHelpLink" custom-create="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="sc -d 获取类加载器"/>
+            </properties>
+          </component>
+          <component id="b3bc1" class="javax.swing.JTextField" binding="dyClassloaderHashTextField">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="7fc12" layout-manager="FormLayout">
+        <rowspec value="center:d:grow"/>
+        <colspec value="fill:846px:grow"/>
+        <colspec value="fill:118px:noGrow"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="fdea2" class="javax.swing.JComboBox" binding="shellScriptComboBox">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="100" height="23"/>
+              </grid>
+              <forms defaultalign-horz="false" defaultalign-vert="false"/>
+            </constraints>
+            <properties>
+              <editable value="true"/>
+              <model/>
+            </properties>
+          </component>
+          <component id="da19e" class="javax.swing.JButton" binding="shellScriptCommandButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="68" height="23"/>
+              </grid>
+              <forms defaultalign-horz="false" defaultalign-vert="false"/>
+            </constraints>
+            <properties>
+              <text value="shell 命令"/>
+              <toolTipText value="直接执行脚本无需打开 arthas"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="3721" layout-manager="FormLayout">
+        <rowspec value="center:d:grow"/>
+        <colspec value="fill:846px:grow"/>
+        <colspec value="fill:118px:noGrow"/>
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="3ca4d" class="javax.swing.JComboBox" binding="commonShellScriptComboBox" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="438" height="27"/>
+              </grid>
+              <forms/>
+            </constraints>
+            <properties>
+              <editable value="true"/>
+            </properties>
+          </component>
+          <component id="50006" class="javax.swing.JButton" binding="commonShellScriptCommandButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <forms defaultalign-horz="false" defaultalign-vert="false"/>
+            </constraints>
+            <properties>
+              <text value="shell 命令"/>
+              <toolTipText value="直接执行脚本无需打开 arthas"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="5e63d" class="javax.swing.JButton" binding="dyCopyCommandButton">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="复制命令"/>
+          <toolTipText value="命令复制到剪切板 到服务器启动arhtas 执行命令 部分脚本可能不支持哦,需要classloader hashcode"/>
+        </properties>
+      </component>
+      <component id="612c7" class="javax.swing.JButton" binding="dyCopyScCommandButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="复制 sc 命令"/>
+        </properties>
+      </component>
+      <component id="70f7d" class="javax.swing.JButton" binding="closeScriptButton">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="关闭命令"/>
+        </properties>
+      </component>
+      <component id="4de36" class="javax.swing.JButton" binding="commonCopyCommandButton">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="复制命令"/>
+          <toolTipText value="命令复制到剪切板 到服务器启动arhtas 执行命令 部分为批量脚本 不能执行哦"/>
+        </properties>
+      </component>
+      <component id="2f83e" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="静态命令（多个命令只能与 shell 命令一起使用）"/>
+        </properties>
+      </component>
+      <component id="12680" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="2b8dc" class="javax.swing.JButton" binding="dyClearCacheButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="清除缓存"/>
+          <toolTipText value="清除以前使用的类加载器的缓存"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

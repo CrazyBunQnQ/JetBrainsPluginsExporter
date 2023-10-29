@@ -2,12 +2,11 @@
 <idea-plugin>
     <id>sync</id>
     <name>CrazySync</name>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <vendor>crazybunqnq</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -15,7 +14,12 @@
                 serviceImplementation="com.github.crazybunqnq.sync.config.PluginImporterExporterConfig"
                 serviceInterface="com.github.crazybunqnq.sync.config.PluginImporterExporterConfig"/>
         <notificationGroup displayType="BALLOON" id="com.github.crazybunqnq"/>
-        <!-- <toolWindow factoryClass="com.github.crazybunqnq.pluginsexporter.toolWindow.MyToolWindowFactory" id="MyToolWindow"/> -->
+
+        <!-- Arthas -->
+        <projectConfigurable instance="com.github.wangji92.arthas.plugin.ui.AppSettingsPage"
+                             id="com.github.wangji92.arthas.plugin.ui.AppSettingsPage"
+                             displayName="Arthas Idea Plugin"/>
+        <projectService serviceImplementation="com.github.wangji92.arthas.plugin.setting.AppSettingsState"/>
     </extensions>
 
     <application-components>
@@ -40,6 +44,342 @@
             <add-to-group anchor="after" group-id="FileMenu"
                           relative-to-action="PluginImporterAction"/>
         </action>
+
+        <!-- Arthas -->
+        <action id="ArthasSc" class="com.github.wangji92.arthas.plugin.action.arthas.ArthasScCommandAction"
+                text="搜索 Jvm Sc 加载的类"
+                description="Arthas get classloader">
+        </action>
+        <action id="ArthasWatch" class="com.github.wangji92.arthas.plugin.action.arthas.ArthasWatchCommandAction"
+                text="Watch"
+                description=" Arthas watch">
+        </action>
+        <action id="ArthasTrace" class="com.github.wangji92.arthas.plugin.action.arthas.ArthasTraceCommandAction"
+                text="跟踪"
+                description="Arthas trace">
+        </action>
+        <action id="ArthasStatic" class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlStaticCommandAction"
+                text="Ognl 调用静态方法字段"
+                description="Arthas ognl static">
+        </action>
+        <action id="ArthasSimpleGetStaticCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasSimpleGetStaticCommandAction"
+                text="获取简单的静态字段"
+                description="Simple getStatic field">
+        </action>
+
+        <action id="ArthasSpecial" class="com.github.wangji92.arthas.plugin.action.arthas.ArthasSpecialCommandAction"
+                text="Arthas 特殊用途链接"
+                description="Arthas special use link">
+
+        </action>
+
+        <action id="ArthasInvokeBeanMethod"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlSpringContextInvokeMethodAction"
+                text="静态 Spring 上下文调用"
+                description="静态 spring 上下文调用方法字段">
+
+        </action>
+
+        <action id="ArthasInstallCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasInstallCommandAction"
+                text="安装 Arthas-Boot.Jar 别名 as.sh"
+                description="Arthas install shell">
+
+        </action>
+        <action id="ArthasInstall2Command"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasInstall2CommandAction"
+                text="安装 as.sh"
+                description="Arthas install in current dir">
+        </action>
+
+        <action id="ArthasHelpCommand" class="com.github.wangji92.arthas.plugin.action.arthas.HelpAction"
+                text="Arthas Idea 插件帮助"
+                description="Arthas idea plugin help">
+        </action>
+        <action id="ArthasTraceMultipleCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasTraceMultipleClassMethodCommandAction"
+                text="跟踪多类方法 Trace -E"
+                description="Arthas 追踪多类方法">
+
+        </action>
+        <action id="ArthasMonitorCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasMonitorCommandAction"
+                text="监控"
+                description="Monitor method execution statistics, e.g. total/success/failure count, average rt, fail rate, etc.">
+
+        </action>
+        <action id="ArthasStackCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasStackCommandAction"
+                text="栈"
+                description="Display the stack trace for the specified class and method">
+
+        </action>
+        <action id="ArthasTimeTunnelCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasTimeTunnelCommandAction"
+                text="时间隧道 Tt"
+                description="Time tunnel">
+
+        </action>
+        <action id="ArthasSetStaticFieldCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlSetStaticFieldCommandAction"
+                text="Ognl 设置静态字段"
+                description="Ognl set static field">
+
+        </action>
+
+        <action id="ArthasOgnlSpringSelectedPropertySourceCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlSpringSelectedPropertySourceCommandAction"
+                text="获取选定的 Spring 属性"
+                description="Ognl get selected spring property">
+
+        </action>
+        <action id="ArthasOgnlSpringAllPropertySourceCommand"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlSpringAllPropertySourceCommandAction"
+                text="获取所有 Spring 属性"
+                description="Ognl get all spring property">
+
+        </action>
+        <action id="ArthasJadCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasJadCommandAction"
+                text="反编译类 Jad"
+                description="Decompile class">
+
+        </action>
+
+        <action id="ArthasDumpCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasDumpCommandAction"
+                text="从 JVM 转储类字节数组"
+                description="Dump class byte array from Jvm">
+        </action>
+        <action id="ArthasHeapDumpCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasHeapDumpCommandAction"
+                text="堆转储"
+                description="Heap dump">
+        </action>
+        <action id="ArthasThreadAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasThreadAction"
+                text="顶部线程栈"
+                description="Display thread info, thread stack">
+        </action>
+
+        <action id="ArthasWatchOgnlSpringContextInvokeMethodAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasWatchOgnlSpringContextInvokeMethodAction"
+                text="查看 Spring 上下文调用"
+                description="Watch spring context invoke">
+        </action>
+        <action id="ArthasTimeTunnelOgnlSpringContextInvokeMethodAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasTimeTunnelOgnlSpringContextInvokeMethodAction"
+                text="TimeTunnel Spring 上下文调用"
+                description="TimeTunnel spring context">
+        </action>
+
+        <action id="ArthasLoggerCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasLoggerCommandAction"
+                text="设置日志级别"
+                description="Print logger info, and update the logger level">
+        </action>
+        <action id="ArthasJvmCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasJvmCommandAction"
+                text="JVM 信息"
+                description="Display the target JVM information">
+        </action>
+        <action id="ArthasClassloaderCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasClassloaderCommandAction"
+                text="显示类加载器信息"
+                description="Show classloader info">
+        </action>
+        <action id="ArthasPerCountCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasPerCountCommandAction"
+                text="Jvm 性能计数器"
+                description="Jvm perf counter">
+        </action>
+        <action id="ArthasDashboardCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasDashboardCommandAction"
+                text="仪表盘"
+                description="Dashboard">
+        </action>
+        <action id="ArthasVmOptionCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasVmOptionCommandAction"
+                text="JVM 选项"
+                description="VmOption">
+        </action>
+        <action id="ArthasOgnlStaticGrammaticalStructureCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlStaticGrammaticalStructureCommandAction"
+                text="静态 Ognl 语法帮助观看静态内容"
+                description="Ognl static grammatical structure">
+        </action>
+        <action id="ArthasAsyncProfilerCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasAsyncProfilerCommandAction"
+                text="异步分析器"
+                description="Async profiler">
+        </action>
+        <action id="ArthasSmCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasSmCommandAction"
+                text="通过 Jvm Sm 查找方法加载"
+                description="Search method loaded By jvm sm">
+        </action>
+        <action id="HelpArthasDocumentPageAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.HelpArthasDocumentPageAction"
+                text="Arthas 文档网站"
+                description="Arthas documentation website">
+        </action>
+        <action id="ArthasClassLoaderLoadClassCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasClassLoaderLoadClassCommandAction"
+                text="类加载器加载类"
+                description="Classloader load class">
+        </action>
+        <action id="ArthasHotCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasHotRedefineCommandAction"
+                text="（热部署）重新定义"
+                description="Redefine">
+        </action>
+
+        <action id="ArthasHotRetransformCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasHotRedefineCommandAction"
+                text="（热部署）重新转换"
+                description="Retransform">
+        </action>
+
+        <action id="LocalFileUploadToOssAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.LocalFileUploadToOssAction"
+                text="本地文件上传到对象存储"
+                description="LocalFileUploadToOssAction">
+        </action>
+
+        <action id="ArthasOptionsCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOptionsCommandAction"
+                text="全局选项设置"
+                description="Global options setting"/>
+
+        <action id="ArthasMybatisMapperReloadAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasMybatisMapperReloadAction"
+                text="Mybatis Mapper Xml 重新加载"
+                description="Mybatis mapper xml reload"/>
+        <action id="ArthasShellScriptCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasShellScriptCommandAction"
+                text="快速获取可用命令"
+                description="Shell script command"/>
+        <action id="ArthasVmtoolCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasVmtoolCommandAction"
+                text="Vmtool 获取实例调用方法字段"
+                description="Vmtool get instance invoke method field"/>
+        <action id="ArthasIdeaOpenConfigPageAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasIdeaOpenConfigPageAction"
+                text="设置 Arthas Idea 插件"
+                description="Setting arthas idea"/>
+        <action id="ArthasOgnlEnumAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasOgnlEnumAction"
+                text="枚举的 Ognl 调用"
+                description="Ognl invoke for enum"/>
+        <action id="ArthasVmtoolSetFieldCommandAction"
+                class="com.github.wangji92.arthas.plugin.action.arthas.ArthasVmtoolSetFieldCommandAction"
+                text="Vmtool 获取实例集字段"
+                description="Vmtool get instance set field"/>
+
+        <group id="arthas-ChangesViewPopupMenu" popup="true" text="Arthas 命令">
+            <!--            version control 修改变更那里 找了好久-->
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="after" relative-to-action="EditSource"/>
+            <reference ref="ArthasShellScriptCommandAction"/>
+            <reference ref="ArthasHotRetransformCommandAction"/>
+            <reference ref="ArthasHotCommandAction"/>
+            <reference ref="ArthasJadCommandAction"/>
+            <reference ref="ArthasSc"/>
+            <reference ref="ArthasSmCommandAction"/>
+            <reference ref="ArthasLoggerCommandAction"/>
+            <reference ref="ArthasAsyncProfilerCommandAction"/>
+            <reference ref="ArthasOptionsCommandAction"/>
+            <separator/>
+            <group id="arthas-plugin-other-ChangesViewPopupMenu" popup="true" text="其他">
+                <reference ref="ArthasDashboardCommandAction"/>
+                <reference ref="ArthasClassloaderCommandAction"/>
+                <reference ref="ArthasClassLoaderLoadClassCommandAction"/>
+                <reference ref="ArthasDumpCommandAction"/>
+                <reference ref="ArthasHeapDumpCommandAction"/>
+                <reference ref="ArthasThreadAction"/>
+                <reference ref="ArthasJvmCommandAction"/>
+                <reference ref="ArthasPerCountCommandAction"/>
+                <reference ref="ArthasVmOptionCommandAction"/>
+                <reference ref="LocalFileUploadToOssAction"/>
+            </group>
+            <reference ref="ArthasInstall2Command"/>
+            <reference ref="ArthasInstallCommand"/>
+            <reference ref="ArthasSpecial"/>
+            <separator/>
+            <reference ref="ArthasIdeaOpenConfigPageAction"/>
+            <reference ref="ArthasHelpCommand"/>
+            <reference ref="HelpArthasDocumentPageAction"/>
+        </group>
+
+        <group id="arthas-plugin" popup="true" text="Arthas 命令">
+            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="$Paste"/>
+            <!--            右键到文件夹区的处理-->
+            <add-to-group group-id="CutCopyPasteGroup" anchor="before" relative-to-action="$Paste"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <separator/>
+            <reference ref="ArthasShellScriptCommandAction"/>
+            <separator/>
+            <reference ref="ArthasWatch"/>
+            <reference ref="ArthasTrace"/>
+            <reference ref="ArthasTraceMultipleCommand"/>
+            <reference ref="ArthasStackCommand"/>
+            <reference ref="ArthasMonitorCommand"/>
+            <reference ref="ArthasTimeTunnelCommand"/>
+            <separator/>
+            <reference ref="ArthasVmtoolCommandAction"/>
+            <reference ref="ArthasVmtoolSetFieldCommandAction"/>
+            <separator/>
+            <group id="arthas-plugin-spring-context" popup="true" text="Spring 获取上下文调用方法字段">
+                <reference ref="ArthasInvokeBeanMethod"/>
+                <reference ref="ArthasWatchOgnlSpringContextInvokeMethodAction"/>
+                <reference ref="ArthasTimeTunnelOgnlSpringContextInvokeMethodAction"/>
+            </group>
+            <separator/>
+            <group id="arthas-plugin-Static Method Field" popup="true" text="获取设置静态方法字段">
+                <reference ref="ArthasSimpleGetStaticCommand"/>
+                <reference ref="ArthasStatic"/>
+                <reference ref="ArthasSetStaticFieldCommand"/>
+                <reference ref="ArthasOgnlStaticGrammaticalStructureCommandAction"/>
+            </group>
+            <reference ref="ArthasOgnlEnumAction"/>
+            <separator/>
+            <group id="arthas-plugin-Spring Properties Priority" popup="true" text="Spring 属性">
+                <reference ref="ArthasOgnlSpringSelectedPropertySourceCommand"/>
+                <reference ref="ArthasOgnlSpringAllPropertySourceCommand"/>
+            </group>
+            <separator/>
+            <reference ref="ArthasAsyncProfilerCommandAction"/>
+            <reference ref="ArthasJadCommandAction"/>
+            <reference ref="ArthasSc"/>
+            <reference ref="ArthasSmCommandAction"/>
+            <reference ref="ArthasLoggerCommandAction"/>
+            <reference ref="ArthasOptionsCommandAction"/>
+            <separator/>
+            <reference ref="ArthasHotRetransformCommandAction"/>
+            <reference ref="ArthasHotCommandAction"/>
+            <separator/>
+            <group id="arthas-plugin-other" popup="true" text="其他">
+                <reference ref="LocalFileUploadToOssAction"/>
+                <reference ref="ArthasDashboardCommandAction"/>
+                <reference ref="ArthasClassloaderCommandAction"/>
+                <reference ref="ArthasClassLoaderLoadClassCommandAction"/>
+                <reference ref="ArthasDumpCommandAction"/>
+                <reference ref="ArthasHeapDumpCommandAction"/>
+                <reference ref="ArthasThreadAction"/>
+                <reference ref="ArthasJvmCommandAction"/>
+                <reference ref="ArthasPerCountCommandAction"/>
+                <reference ref="ArthasVmOptionCommandAction"/>
+                <reference ref="ArthasMybatisMapperReloadAction"/>
+            </group>
+            <separator/>
+            <reference ref="ArthasInstall2Command"/>
+            <reference ref="ArthasInstallCommand"/>
+            <reference ref="ArthasSpecial"/>
+            <separator/>
+            <reference ref="ArthasIdeaOpenConfigPageAction"/>
+            <reference ref="ArthasHelpCommand"/>
+            <reference ref="HelpArthasDocumentPageAction"/>
+        </group>
     </actions>
 
     <applicationListeners>
