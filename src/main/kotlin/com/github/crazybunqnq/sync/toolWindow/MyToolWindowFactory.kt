@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter.toolWindow
+package com.github.crazybunqnq.sync.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.crazybunqnq.pluginsexporter.MyBundle
-import com.github.crazybunqnq.pluginsexporter.services.MyProjectService
+import com.github.crazybunqnq.sync.MyBundle
+import com.github.crazybunqnq.sync.services.MyProjectService
 import javax.swing.JButton
 
 

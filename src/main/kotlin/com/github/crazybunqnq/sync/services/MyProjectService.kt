@@ -1,9 +1,9 @@
-package com.github.crazybunqnq.pluginsexporter.services
+package com.github.crazybunqnq.sync.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.crazybunqnq.pluginsexporter.MyBundle
+import com.github.crazybunqnq.sync.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

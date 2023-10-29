@@ -1,9 +1,9 @@
-package com.github.crazybunqnq.pluginsexporter.action;
+package com.github.crazybunqnq.sync.action;
 
-import com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig;
-import com.github.crazybunqnq.pluginsexporter.model.json.PluginNodeModel;
-import com.github.crazybunqnq.pluginsexporter.model.json.PluginNodeModelFactory;
-import com.github.crazybunqnq.pluginsexporter.view.PluginImporterExporterPanel;
+import com.github.crazybunqnq.sync.config.PluginImporterExporterConfig;
+import com.github.crazybunqnq.sync.model.json.PluginNodeModel;
+import com.github.crazybunqnq.sync.model.json.PluginNodeModelFactory;
+import com.github.crazybunqnq.sync.view.PluginImporterExporterPanel;
 import com.google.gson.JsonParseException;
 import com.intellij.ide.plugins.*;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Logger;
 
 public class PluginImporterAction extends AnAction {

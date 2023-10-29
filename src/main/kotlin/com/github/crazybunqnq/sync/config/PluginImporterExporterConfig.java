@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter.config;
+package com.github.crazybunqnq.sync.config;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ServiceManager;

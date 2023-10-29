@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter.view;
+package com.github.crazybunqnq.sync.view;
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.project.Project;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import java.io.File;
 
-import static com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig.DEFAULT_FILE_NAME;
+import static com.github.crazybunqnq.sync.config.PluginImporterExporterConfig.DEFAULT_FILE_NAME;
 
 public class PluginImporterExporterPanel {
     public JPanel mRootPanel;

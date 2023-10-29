@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter
+package com.github.crazybunqnq.sync
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

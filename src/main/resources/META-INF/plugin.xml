@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.crazybunqnq.pluginsexporter</id>
-    <name>Plugins Exporter</name>
+    <id>sync</id>
+    <name>CrazySync</name>
     <version>0.0.6</version>
     <vendor>crazybunqnq</vendor>
 
@@ -12,8 +12,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <applicationService
-                serviceImplementation="com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig"
-                serviceInterface="com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig"/>
+                serviceImplementation="com.github.crazybunqnq.sync.config.PluginImporterExporterConfig"
+                serviceInterface="com.github.crazybunqnq.sync.config.PluginImporterExporterConfig"/>
         <notificationGroup displayType="BALLOON" id="com.github.crazybunqnq"/>
         <!-- <toolWindow factoryClass="com.github.crazybunqnq.pluginsexporter.toolWindow.MyToolWindowFactory" id="MyToolWindow"/> -->
     </extensions>
@@ -28,13 +28,13 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action class="com.github.crazybunqnq.pluginsexporter.action.PluginImporterAction"
+        <action class="com.github.crazybunqnq.sync.action.PluginImporterAction"
                 description="Install plugins from a setting file"
                 id="PluginImporterAction" text="Import Plugins...">
             <add-to-group anchor="after" group-id="FileMenu"
                           relative-to-action="FileMainSettingsGroup"/>
         </action>
-        <action class="com.github.crazybunqnq.pluginsexporter.action.PluginExporterAction"
+        <action class="com.github.crazybunqnq.sync.action.PluginExporterAction"
                 description="Export plugin information to a setting file"
                 id="PluginExporterAction" text="Export Plugins...">
             <add-to-group anchor="after" group-id="FileMenu"
@@ -43,6 +43,5 @@
     </actions>
 
     <applicationListeners>
-        <!-- <listener class="com.github.crazybunqnq.pluginsexporter.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/> -->
     </applicationListeners>
 </idea-plugin>

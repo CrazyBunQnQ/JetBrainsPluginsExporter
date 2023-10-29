@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter.model.json;
+package com.github.crazybunqnq.sync.model.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,7 +61,7 @@ public class PluginNodeModel {
         PluginNode pluginNode = createPluginNode(pluginNodeEntity);
         List<PluginId> depends = createDepends(pluginNodeEntity);
         PluginId[] optionals = createOptionals(pluginNodeEntity);
-        pluginNode.setDepends(depends, optionals);
+        // pluginNode.setDepends(depends, optionals);
         // pluginNode.setDependencies(depends);
         return pluginNode;
     }

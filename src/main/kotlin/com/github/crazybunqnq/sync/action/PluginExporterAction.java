@@ -1,13 +1,13 @@
-package com.github.crazybunqnq.pluginsexporter.action;
+package com.github.crazybunqnq.sync.action;
 
-import com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig;
-import com.github.crazybunqnq.pluginsexporter.model.json.PluginNodeEntity;
-import com.github.crazybunqnq.pluginsexporter.model.json.PluginNodeModel;
-import com.github.crazybunqnq.pluginsexporter.model.json.PluginNodeModelFactory;
-import com.github.crazybunqnq.pluginsexporter.model.xml.IdeaVersion;
-import com.github.crazybunqnq.pluginsexporter.model.xml.Plugin;
-import com.github.crazybunqnq.pluginsexporter.model.xml.Plugins;
-import com.github.crazybunqnq.pluginsexporter.view.PluginImporterExporterPanel;
+import com.github.crazybunqnq.sync.config.PluginImporterExporterConfig;
+import com.github.crazybunqnq.sync.model.json.PluginNodeEntity;
+import com.github.crazybunqnq.sync.model.json.PluginNodeModel;
+import com.github.crazybunqnq.sync.model.json.PluginNodeModelFactory;
+import com.github.crazybunqnq.sync.model.xml.IdeaVersion;
+import com.github.crazybunqnq.sync.model.xml.Plugin;
+import com.github.crazybunqnq.sync.model.xml.Plugins;
+import com.github.crazybunqnq.sync.view.PluginImporterExporterPanel;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.ide.plugins.marketplace.MarketplaceRequests;
 import com.intellij.notification.NotificationGroup;

@@ -1,4 +1,4 @@
-package com.github.crazybunqnq.pluginsexporter.model.xml;
+package com.github.crazybunqnq.sync.model.xml;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

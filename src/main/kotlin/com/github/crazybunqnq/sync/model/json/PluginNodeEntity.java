@@ -1,6 +1,6 @@
-package com.github.crazybunqnq.pluginsexporter.model.json;
+package com.github.crazybunqnq.sync.model.json;
 
-import com.github.crazybunqnq.pluginsexporter.config.PluginImporterExporterConfig;
+import com.github.crazybunqnq.sync.config.PluginImporterExporterConfig;
 import com.intellij.ide.plugins.IdeaPluginDependency;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 
@@ -184,7 +184,7 @@ public class PluginNodeEntity {
         }
 
         // ignore this plugin
-        return !"com.github.crazybunqnq.jetbrainspluginsexporter".equals(pluginIdString);
+        return !"com.github.crazybunqnq.sync".equals(pluginIdString);
     }
 
     @Override

@@ -1,6 +1,6 @@
-# PluginsExporter
+# CrazySync
 
-![Build](https://github.com/CrazyBunQnQ/PluginsExporter/workflows/Build/badge.svg)
+![Build](https://github.com/CrazyBunQnQ/CrazySync/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
@@ -23,19 +23,19 @@ This plugin currently has these main features.
 - Dump which plugins are installed as plugin repository
 - Download all plugins from a JSON file
 
-[GitHub](https://github.com/CrazyBunQnQ/PluginsExporter) | [Issues](https://github.com/CrazyBunQnQ/PluginsExporter/issues)
+[GitHub](https://github.com/CrazyBunQnQ/CrazySync) | [Issues](https://github.com/CrazyBunQnQ/CrazySync/issues)
 <!-- Plugin description end -->
 
 ## Installation
 
 - Using the IDE built-in plugin system:
   
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "PluginsExporter"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "CrazySync"</kbd> >
   <kbd>Install</kbd>
   
 - Manually:
 
-  Download the [latest release](https://github.com/CrazyBunQnQ/PluginsExporter/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/CrazyBunQnQ/CrazySync/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## Usage

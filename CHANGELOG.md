@@ -1,10 +1,11 @@
-# PluginsExporter Changelog
+# CrazySync Changelog
 
 ## [Unreleased]
 ## [0.0.6]
-## [0.0.6]
+
 ### Changed
-- upgrade to platform 2023.2.3
+
+- upgrade to platform 2023.2
 
 ## [0.0.5]
 
