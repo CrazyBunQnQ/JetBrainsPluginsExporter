@@ -35,7 +35,7 @@ dependencies {
     implementation("com.google.guava:guava:23.0")
     implementation("commons-collections:commons-collections:3.2.2")
     implementation("redis.clients:jedis:3.4.1")
-    implementation("com.amazonaws:aws-java-sdk-s3:1.12.321")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.577")
 }
 
 java {
