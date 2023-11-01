@@ -30,7 +30,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
     implementation("org.projectlombok:lombok:1.18.10")
     implementation("com.aliyun.oss:aliyun-sdk-oss:3.9.1")
-    implementation("commons-io:commons-io:2.7")
+    implementation("commons-io:commons-io:2.15.0")
     implementation("org.apache.commons:commons-text:1.11.0")
     implementation("com.google.guava:guava:23.0")
     implementation("commons-collections:commons-collections:3.2.2")
