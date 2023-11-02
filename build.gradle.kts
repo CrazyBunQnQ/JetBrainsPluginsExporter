@@ -26,7 +26,7 @@ repositories {
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
     implementation(libs.annotations)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
     implementation("org.projectlombok:lombok:1.18.10")
     implementation("com.aliyun.oss:aliyun-sdk-oss:3.17.2")
