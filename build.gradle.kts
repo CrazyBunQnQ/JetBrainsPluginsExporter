@@ -28,7 +28,7 @@ dependencies {
     implementation(libs.annotations)
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.10")
-    implementation("org.projectlombok:lombok:1.18.10")
+    implementation("org.projectlombok:lombok:1.18.32")
     implementation("com.aliyun.oss:aliyun-sdk-oss:3.17.2")
     implementation("commons-io:commons-io:2.15.0")
     implementation("org.apache.commons:commons-text:1.11.0")
